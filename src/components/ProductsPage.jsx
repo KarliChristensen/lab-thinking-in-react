@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import Searchbar from "./Searchbar";
+import ProductTable from "./ProductTable";
 import data from './../data.json';
 
 function ProductsPage() {
     const [products, setProducts] = useState(data);
-    console.log(data)
   return (
     <div>
-    <h1>Products Page</h1>
+    <h1>IronStore</h1>
+    <Searchbar />
+    <ProductTable  />
     </div>
   )
 }

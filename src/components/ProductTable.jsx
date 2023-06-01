@@ -1,0 +1,26 @@
+import React from 'react';
+import ProductRow from './ProductRow';
+import data from './../data.json';
+
+function ProductTable() {
+  console.log(data[0])
+  return (
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+        {data.map((product, index) => (
+          <ProductRow key={index} product={product} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default ProductTable;
