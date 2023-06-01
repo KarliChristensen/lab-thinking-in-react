@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Navbar() {
+function Searchbar() {
   return (
-    <div>Navbar</div>
+    <input className='bg-slate-500' type="Search" />
   )
 }
 
-export default Navbar
+export default Searchbar
