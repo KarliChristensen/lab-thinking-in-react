@@ -2,8 +2,8 @@ import React from 'react';
 import ProductRow from './ProductRow';
 import data from './../data.json';
 
-function ProductTable() {
-  console.log(data[0])
+function ProductTable({ query }) {
+  console.log(data[0]);
   return (
     <div>
       <table>
@@ -14,9 +14,15 @@ function ProductTable() {
           </tr>
         </thead>
         <tbody>
-        {data.map((product, index) => (
-          <ProductRow key={index} product={product} />
-          ))}
+          {data
+            .filter((product) => {
+              return query.toLowerCase() === ''
+                ? product
+                : product.name.toLowerCase().includes(query);
+            })
+            .map((product, index) => (
+              <ProductRow key={index} product={product} />
+            ))}
         </tbody>
       </table>
     </div>
