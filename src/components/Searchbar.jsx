@@ -1,7 +1,4 @@
-import { useState } from 'react';
-
-function Searchbar({query, setQuery}) {
-
+function Searchbar({ query, setQuery, setInStock}) {
   console.log(query);
 
   return (
@@ -12,6 +9,11 @@ function Searchbar({query, setQuery}) {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search..."
       />
+      <div>
+      <h1>Toggle Available goods</h1>
+      <input type="checkbox" onChange={(e) => setInStock(e.target.checked)} />
+
+      </div>
     </div>
   );
 }
