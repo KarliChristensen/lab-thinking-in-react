@@ -8,7 +8,7 @@ function ProductsPage() {
 
   return (
     <div>
-      <h1>IronStore</h1>
+      <h1 className='text-9xl mb-20 mt-20' >IronStore</h1>
       <Searchbar query={query} setQuery={setQuery} setInStock={setInStock}/>
       <ProductTable query={query} inStock={inStock} setInStock={setInStock} />
     </div>

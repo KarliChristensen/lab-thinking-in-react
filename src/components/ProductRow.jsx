@@ -3,14 +3,12 @@ import React from 'react';
 const ProductRow = ({ product }) => {
   const { name, price, inStock } = product;
 
-  const red = {
-    color: 'red'
-  };
+  const stockStyle = inStock ? '' : 'text-red-500';
 
   return (
     <tr>
-      <td style={inStock ? null : red}>{name}</td>
-      <td>{price}</td>
+      <td className={`py-2 ${stockStyle}`}>{name}</td>
+      <td className="py-2">{price}</td>
     </tr>
   );
 };
